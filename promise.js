@@ -1,9 +1,3 @@
-// Urutan mencuci baju yang benar
-// 1. Rendam
-// 2. Kucek
-// 3. Bilas
-// 4. Jemur
-// 5. Setrika
 
 function rendam() {
     return new Promise ((resolve,reject)=>{setTimeout(function() { 
@@ -39,11 +33,12 @@ function rendam() {
   }
   
   function setrika() {
-    return new Promise((resolve,reject)=> {
-        setTimeout(function() {
-            console.log("Sedang setrika. Setelah ini selesai")
-          }, 4000);
+    return new Promise((resolve,reject)=>{
+      setTimeout(function() {
+        resolve(console.log("Sedang setrika. Setelah ini selesai"))
+      }, 4000);
     })
+        
   }
   
   const aturanMencuciBaju = rendam()
@@ -52,8 +47,6 @@ function rendam() {
   .then(jemur)
   .then(setrika)
   
-// Promise.all([rendam(),kucek(),bilas(),jemur(),setrika()])
-//   .then (result => console.log(result))
 
   
   // Ekspektasi:

@@ -10,8 +10,6 @@ function rendam() {
             resolve(console.log("Sedang kucek. Setelah ini bilas"))
           }, 2000);
     })
-
-  
   }
   
   function bilas() {
@@ -32,9 +30,11 @@ function rendam() {
   }
   
   function setrika() {
-        setTimeout(function() {
-            console.log("Sedang setrika. Setelah ini selesai")
-          }, 4000);
+    return new Promise((resolve,reject)=>{
+      setTimeout(function() {
+        console.log("Sedang setrika. Setelah ini selesai")
+      }, 4000);
+    })
     }
   
 
@@ -43,7 +43,15 @@ function rendam() {
       await kucek()
       await bilas()
       await jemur()
-            setrika()
+      await setrika()
   }
 
   aturanMencuciBaju()
+
+  
+  // Ekspektasi:
+  // Mulai rendam. Setelah ini kucek
+  // Sedang kucek. Setelah ini bilas
+  // Sedang bilas. Setelah ini jemur
+  // Sedang jemur. Setelah ini setrika
+  // Sedang setrika. Setelah ini selesai

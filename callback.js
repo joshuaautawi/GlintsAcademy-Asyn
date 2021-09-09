@@ -1,9 +1,4 @@
-// Urutan mencuci baju yang benar
-// 1. Rendam
-// 2. Kucek
-// 3. Bilas
-// 4. Jemur
-// 5. Setrika
+
 
 function rendam(callback) {
   setTimeout(function() { 
@@ -46,12 +41,7 @@ const urutanMencuciBaju = rendam(()=>{
                             })
                           })
 
-// Output:
-// Sedang bilas. Setelah ini jemur
-// Sedang kucek. Setelah ini bilas
-// Mulai rendam. Setelah ini kucek
-// Sedang setrika. Setelah ini selesai
-// Sedang jemur. Setelah ini setrika
+
 
 // Ekspektasi:
 // Mulai rendam. Setelah ini kucek
